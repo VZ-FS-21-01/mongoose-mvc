@@ -1,0 +1,21 @@
+<%- include('../partials/head') %>
+    <div id="cat-details">
+        <h3>
+            <%cat.name %>
+        </h3>
+        <p>Hello I am <%=cat.name %>. I am a beautiful <%= cat.color %> and I weight <%= cat.weight %> kg.
+        </p>
+    </div>
+
+    <form class="hide" id="cat-details-form" action="/cats/<%=cat._id%>" method="post">
+        <form action="/cats/add" method="post">
+            <input type="text" name="name" value=<%=cat.name%>>
+            <input type="number" name="weight" value=<%=cat.weight%>>
+            <input type="text" name="color" value=<%=cat.color%>>
+            <input type="submit" value="Senden">
+        </form>
+    </form>
+    <button onclick="editCat()">Edit</button>
+    <button class="delete-cat" data-cat=<%=cat._id%>
+        >Delete</button>
+    <%- include('../partials/foot') %>

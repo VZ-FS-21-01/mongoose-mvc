@@ -1,0 +1,18 @@
+<%- include('../partials/head') %>
+
+    <div class="cats">
+        <% cats.forEach(cat=> {%>
+            <div>
+                <h3>
+                    <a href="/cats/<%=cat._id%>">
+                        <%= cat.name %>
+                    </a>
+                </h3>
+
+            </div>
+            <%})%>
+
+    </div>
+
+
+    <%- include('../partials/foot') %>
